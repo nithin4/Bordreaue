@@ -1,0 +1,70 @@
+<div class="container col-sm-3 col-md-3 col-lg-3 ng-scope">
+	<div class="homepage_logo">
+		<!--start of the brand logo -->
+		<img src="assets/img/service/owit-globa.png" style="width: 167px;height: 54px">
+	</div>
+	<!--End of the brand logo -->
+	<div class="owitloginform">
+	<form name="loginform" onsubmit="event.preventDefault();" class="ng-dirty ng-valid-parse ng-valid ng-valid-required">
+		<div class="form-group">
+
+			<div class="input-group">
+				<span class="input-group-addon"><i class="glyphicon glyphicon-user" id="customised-look"></i></span> <input id="login-username" type="text" class="form-control ng-not-empty ng-dirty ng-valid-parse ng-valid ng-valid-required ng-touched" name="username" value="" placeholder="username" ng-model="vm.username" required="" focus-me="">
+
+			</div>
+			<span class="message-required ng-hide" ng-show="loginform.username.$error.required &amp;&amp; loginform.username.$touched">This
+				field is required.</span>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="glyphicon glyphicon-lock" id="customised-look"></i></span> <input type="password" class="form-control ng-not-empty ng-dirty ng-valid-parse ng-valid ng-valid-required ng-touched" id="password" placeholder="Enter password" ng-model="vm.password" on-enter="login()" name="password" required="" data-toggle="password">  <!-- 	ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/" -->
+					
+				<!--<span ng-show="loginform.password.$error.pattern && loginform.password.$touched">Password should be atleast 8 characters long and should contain one number,one character and one special character.</span>-->
+
+			</div>
+			<span class="message-required ng-hide" ng-show="loginform.password.$error.required &amp;&amp; loginform.password.$touched">This
+				field is required.</span>
+
+		</div>
+		<!--  <div class="forgot-password pull-right">
+			<a href="#" data-toggle="modal" data-target="#myModal">Forgot
+				Password</a>
+		</div>-->
+		<div class="login-button">
+			<button type="submit" class="btn btn-primary col-md-12" ng-disabled="loginform.$invalid" ng-click="vm.login()">Login<!-- {{translation.loginBtnLbl}} --></button>
+		</div>
+		<span id="badCredId" class="message-required"></span>
+
+	</form>
+	</div><!--  end of OWITLoginForm--->
+	<!-- Forget Password -->
+	<div id="myModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+					<h4 class="modal-title">Password Reset</h4>
+				</div>
+				<div class="modal-body">
+					<form action="" name="passwordreset" class="ng-pristine ng-valid-email ng-invalid ng-invalid-required ng-valid-pattern">
+						<div class="form-group">
+							<label for="email">Email:</label> <input type="email" class="form-control ng-pristine ng-untouched ng-empty ng-valid-email ng-invalid ng-invalid-required ng-valid-pattern" id="email" placeholder="Enter email" name="email" ng-model="email" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required="">
+							<span ng-show="passwordreset.email.$error.required &amp;&amp; passwordreset.email.$touched" class="ng-hide">This
+								field is required.</span> <span ng-show="passwordreset.email.$error.pattern" class="ng-hide">The email
+								field is invalid.</span>
+						</div>
+						<button type="submit" class="btn btn-default" ng-disabled="passwordreset.$invalid" disabled="disabled">Submit</button>
+
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</div>
